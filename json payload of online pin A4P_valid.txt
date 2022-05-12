@@ -1,0 +1,1082 @@
+JSON PAYLOAD FOR ONLINE PIN A4P FEATURE:
+
+1. MASTER/MAESTRO CTLS (MP16) online pin transaction:
+Authorization json payload:
+
+{
+"transactionReference": "Monlinepinctls",
+"transactionDateTime": 1635162223485,
+"location": null,
+"paypoint": {
+"paypointId": "33319558",
+"countryCode": "DE",
+"deviceSerialNumber": "14011990",
+"terminalType": "attended",
+"capabilities": "E0F8C8",
+"additionalCapabilities": null,
+"version": null
+},
+"instruction": {
+"transactionType": "sale",
+"value": {
+"amount": 4500,
+"currency": "EUR",
+"cashbackAmount": 0,
+"gratuityAmount": 0,
+"donationAmount": 0,
+"dcc": null
+},
+"narrative": null,
+"posEntryMode": "ctls_mag_swipe_no_pin",
+"reasonOnlineCode": "05",
+"paymentInstrument": {
+"type": "icc",
+"primaryAccountNumber": "679999AAAAAAAAA0166",
+"scheme": null,
+"expiryDate": {
+"month": 12,
+"year": 2025,
+"day": 31
+},
+"track2Data": "679999AAAAAAAAA0166D2512222AAAAAAAAA",
+"issueNo": "1",
+"encryptedCardPaymentData": {
+"initializationVector": "F1007F619FDA019D",
+"chdEncryptionType": "INGENICO_DUKPT_PIN",
+"chdEncryptionData": "2486E06414A15A9A8E2B4F7C5AFA7FC56AA2FC0A19A93AF7C44A2FF32BB553D3E20B2073C91C3964",
+"chdksn": "FFFF4168200008201BC0",
+"encryptedExpiryDate": null
+},
+"encryptedPinData": {
+"initializationVector": null,
+"pinBlock": "19F8B03B0C002E2E",
+"ksn": "FFFF9998200008800010"
+},
+"cardAdditionalData": null,
+"transactionSequenceNumber": 4,
+"transactionStatusInformation": "E800",
+"effectiveStartDate": null,
+"applicationCryptogram": "2C6094C742726EFB",
+"applicationInterchangeProfile": "1980",
+"applicationTransactionCounter": "026D",
+"terminalVerificationResults": "0000048001",
+"unpredictableNumber": "4C4A5B7F",
+"transactionType": "0",
+"issuerApplicationData": "0110A04009240000000000000000000000FF",
+"applicationIdentifier": "A0000000043060",
+"applicationVersionNumber": "0002",
+"cryptogramInformationData": "80",
+"cardholderVerificationMethodResults": "420300",
+"applicationUsageControl": "FF00",
+"issuerApplicationCodesDefault": "0000000000",
+"issuerApplicationCodesDenial": "0000000000",
+"issuerApplicationCodesOnline": "0000000000",
+"applicationPANSequenceNumber": "1",
+"scriptResults": null,
+"formFactorIndicator": null,
+"discretionaryData": null
+}
+},
+"additionalData": null
+}
+
+
+Settlement (capture) json payload:
+
+{
+	"transactionReference": "Monlinepinctls",
+	"transactionDateTime": 1635489350430,
+	"location": null,
+	"payPoint": {
+		"paypointId": "33319558",
+		"countryCode": "DE",
+		"deviceSerialNumber": "14011990",
+		"terminalType": "attended",
+		"capabilities": "E0F8C8",
+		"additionalCapabilities": null,
+		"version": "231"
+	},
+	"captureAdditionalData": {
+		"customerFriendlyReferenceIdentifier": null,
+		"posAuthorizationResultCode": "approved",
+		"authorizationCode": "028572"
+	},
+	"instruction": {
+		"value": {
+			"amount": 4500,
+			"currency": "EUR",
+			"cashbackAmount": 0,
+			"gratuityAmount": 0,
+			"donationAmount": 0,
+			"dcc": null
+		},
+		"narrative": null,
+		"transactionType": "sale",
+		"posEntryMode": "ctls_mag_no_pin",
+		"paymentInstrument": {
+			"type": "icc",
+			"primaryAccountNumber": "679999AAAAAAAAA0166",
+			"scheme": null,
+			"expiryDate": {
+				"month": 12,
+				"year": 2025,
+				"day": 31
+			},
+			"track2Data": null,
+			"issueNo": "1",
+			"encryptedCardPaymentData": {
+				"initializationVector": "F1007F619FDA019D",
+				"chdEncryptionType": "INGENICO_DUKPT_PIN",
+				"chdEncryptionData": "2486E06414A15A9A8E2B4F7C5AFA7FC56AA2FC0A19A93AF7C44A2FF32BB553D3E20B2073C91C3964",
+				"chdksn": "FFFF4168200008201BC0",
+				"encryptedExpiryDate": null
+			},
+			"encryptedPinData": {
+			 "initializationVector": null,
+             "pinBlock": "19F8B03B0C002E2E",
+             "ksn": "FFFF9998200008800010"	
+			},
+			"cardAdditionalData": null,
+			"transactionSequenceNumber": 4,
+			"transactionStatusInformation": "E800",
+			"effectiveStartDate": {
+				"month": 1,
+				"year": 2004,
+				"day": 1
+			},
+			"applicationCryptogram": "2C6094C742726EFB",
+			"applicationInterchangeProfile": "1980",
+			"applicationTransactionCounter": "026D",
+			"terminalVerificationResults": "0000048001",
+			"unpredictableNumber": "4C4A5B7F",
+			"transactionType": "0",
+			"issuerApplicationData": "0110A04009240000000000000000000000FF",
+			"applicationIdentifier": "A0000000043060",
+			"applicationVersionNumber": "0002",
+			"cryptogramInformationData": "80",
+			"cardholderVerificationMethodResults": "420300",
+			"applicationUsageControl": "FF00",
+			"issuerApplicationCodesDefault": "0000000000",
+			"issuerApplicationCodesDenial": "0000000000",
+			"issuerApplicationCodesOnline": "0000000000",
+			"applicationPANSequenceNumber": "1",
+			"scriptResults": null,
+			"formFactorIndicator": null,
+			"discretionaryData": null
+		},
+		"reasonOnlineCode": "10"
+	},
+	"posTransactionResult": "approved_online"
+}
+
+
+
+
+2. MASTER/MAESTRO ICC (MTIP-13) transaction:
+AUTHORIZATION json payload:
+
+{
+"transactionReference": "MonlinepinICC",
+"transactionDateTime": 1635235640356,
+"location": null,
+"paypoint": {
+"paypointId": "33319558",
+"countryCode": "DE",
+"deviceSerialNumber": "14011990",
+"terminalType": "attended",
+"capabilities": "E0F8C8",
+"additionalCapabilities": null,
+"version": null
+},
+"instruction": {
+"transactionType": "sale",
+"value": {
+"amount": 1000,
+"currency": "EUR",
+"cashbackAmount": 0,
+"gratuityAmount": 0,
+"donationAmount": 0,
+"dcc": null
+},
+"narrative": null,
+"posEntryMode": "chip",
+"reasonOnlineCode": "10",
+"paymentInstrument": {
+"type": "icc",
+"primaryAccountNumber": "679999AAAAAAAAA0069",
+"scheme": null,
+"expiryDate": {
+"month": 12,
+"year": 2025,
+"day": 31
+},
+"track2Data": "679999AAAAAAAAA0069D2512220AAAAAAAAA",
+"issueNo": "25",
+"encryptedCardPaymentData": {
+"initializationVector": "2CEBA22718591BFF",
+"chdEncryptionType": "INGENICO_DUKPT_PIN",
+"chdEncryptionData": "F799DCC9C8FAB34566BFCB3F3F9ABEC14A152D9D8262AC08841FD5C57992E2A94C0291AA75810603E3D3787A56BA8A53",
+"chdksn": "FFFF4168200008201C31",
+"encryptedExpiryDate": null
+},
+"encryptedPinData": {
+"initializationVector": null,
+"pinBlock": "407911395DE9A4E9",
+"ksn": "FFFF9998200008800017"
+},
+"cardAdditionalData": null,
+"transactionSequenceNumber": 8,
+"transactionStatusInformation": "E800",
+"effectiveStartDate": null,
+"applicationCryptogram": "A4DFC7533FD9F394",
+"applicationInterchangeProfile": "3000",
+"applicationTransactionCounter": "01E2",
+"terminalVerificationResults": "0000048000",
+"unpredictableNumber": "349144DE",
+"transactionType": "0",
+"issuerApplicationData": "0210A0800F240000000000000000000000FF",
+"applicationIdentifier": "A0000000043060",
+"applicationVersionNumber": "0002",
+"cryptogramInformationData": "80",
+"cardholderVerificationMethodResults": "420300",
+"applicationUsageControl": "FF00",
+"issuerApplicationCodesDefault": "FC50A00000",
+"issuerApplicationCodesDenial": "0000000000",
+"issuerApplicationCodesOnline": "F870A49800",
+"applicationPANSequenceNumber": "25",
+"scriptResults": null,
+"formFactorIndicator": null,
+"discretionaryData": null
+}
+},
+"additionalData": null
+}
+
+
+SETTLEMENT (CAPTURE) json payload:
+
+{
+	"transactionReference": "MonlinepinICC",
+	"transactionDateTime": 1635490139358,
+	"location": null,
+	"payPoint": {
+		"paypointId": "33319558",
+		"countryCode": "DE",
+		"deviceSerialNumber": "14011990",
+		"terminalType": "attended",
+		"capabilities": "E0F8C8",
+		"additionalCapabilities": null,
+		"version": "230"
+	},
+	"captureAdditionalData": {
+		"customerFriendlyReferenceIdentifier": null,
+		"posAuthorizationResultCode": "approved",
+		"authorizationCode": "028588"
+	},
+	"instruction": {
+		"value": {
+			"amount": 1000,
+			"currency": "EUR",
+			"cashbackAmount": 0,
+			"gratuityAmount": 0,
+			"donationAmount": 0,
+			"dcc": null
+		},
+		"narrative": null,
+		"transactionType": "sale",
+		"posEntryMode": "chip_no_pin",
+		"paymentInstrument": {
+			"type": "icc",
+			"primaryAccountNumber": "679999AAAAAAAAA0069",
+			"scheme": null,
+			"expiryDate": {
+				"month": 12,
+				"year": 2025,
+				"day": 31
+			},
+			"track2Data": null,
+			"issueNo": "0",
+			"encryptedCardPaymentData": {
+				"initializationVector": "2CEBA22718591BFF",
+				"chdEncryptionType": "INGENICO_DUKPT_PIN",
+				"chdEncryptionData": "F799DCC9C8FAB34566BFCB3F3F9ABEC14A152D9D8262AC08841FD5C57992E2A94C0291AA75810603E3D3787A56BA8A53",
+				"chdksn": "FFFF4168200008201C31",
+				"encryptedExpiryDate": null
+			},
+			"encryptedPinData": {
+                 "initializationVector": null,
+                 "pinBlock": "407911395DE9A4E9",
+                 "ksn": "FFFF9998200008800017"
+            },
+			"cardAdditionalData": null,
+			"transactionSequenceNumber": 8,
+			"transactionStatusInformation": "E800",
+			"effectiveStartDate": {
+				"month": 1,
+				"year": 2004,
+				"day": 1
+			},
+			"applicationCryptogram": "5118F65EABEC82C6",
+			"applicationInterchangeProfile": "3000",
+			"applicationTransactionCounter": "01E2",
+			"terminalVerificationResults": "0000048000",
+			"unpredictableNumber": "349144DE",
+			"transactionType": "0",
+			"issuerApplicationData": "021060900F240000000000000000000000FF",
+			"applicationIdentifier": "A0000000043060",
+			"applicationVersionNumber": "0002",
+			"cryptogramInformationData": "40",
+			"cardholderVerificationMethodResults": "420300",
+			"applicationUsageControl": "FF00",
+			"issuerApplicationCodesDefault": "FC50A00000",
+			"issuerApplicationCodesDenial": "0000000000",
+			"issuerApplicationCodesOnline": "F870A49800",
+			"applicationPANSequenceNumber": "25",
+			"scriptResults": null,
+			"formFactorIndicator": null,
+			"discretionaryData": null
+		},
+		"reasonOnlineCode": "10"
+	},
+	"posTransactionResult": "approved_online"
+}
+
+
+3. VISA MSR (MSR-111) online pin transaction:
+AUTHORIZATION json payload:
+
+{
+"transactionReference": "VonlinepinMSR",
+"transactionDateTime": 1635235640383,
+"location": null,
+"paypoint": {
+"paypointId": "33319558",
+"countryCode": "DE",
+"deviceSerialNumber": "14011990",
+"terminalType": "attended",
+"capabilities": "E0F8C8",
+"additionalCapabilities": null,
+"version": null
+},
+"instruction": {
+"transactionType": "sale",
+"value": {
+"amount": 4099,
+"currency": "EUR",
+"cashbackAmount": 0,
+"gratuityAmount": 0,
+"donationAmount": 0,
+"dcc": null
+},
+"narrative": null,
+"posEntryMode": "mag_swipe",
+"reasonOnlineCode": "10",
+"paymentInstrument": {
+"type": "card",
+"primaryAccountNumber": "454305AAAAAA6721",
+"scheme": null,
+"expiryDate": {
+"month": 12,
+"year": 2020,
+"day": 31
+},
+"track2Data": "3B343534333035AAAAAAAAAAAA363732313D32303132313237AAAAAAAAAAAAAAAAAAAAAAAAAA3F3B3FA3",
+"issueNo": "0",
+"encryptedCardPaymentData": {
+"initializationVector": "368990B68D500763",
+"chdEncryptionType": "INGENICO_DUKPT_PIN",
+"chdEncryptionData": "D58E09377C2AB90D3C9B63D5BF222026DA8C3761922C597224BB621227253036B1B62062146D960F9DDB35CAD3041ACC",
+"chdksn": "FFFF4168200008201BC2",
+"encryptedExpiryDate": null
+},
+"encryptedPinData": {
+"initializationVector": null,
+"pinBlock": "1F9F00FD5C40930E",
+"ksn": "FFFF9998200008800011"
+},
+"cardAdditionalData": null,
+"transactionSequenceNumber": 5,
+"transactionStatusInformation": null,
+"effectiveStartDate": null
+}
+},
+"additionalData": null
+}
+
+SETTLEMENT (CAPTURE):
+
+{
+	"transactionReference": "VonlinepinMSR",
+	"transactionDateTime": 1635490403855,
+	"location": null,
+	"payPoint": {
+		"paypointId": "33319558",
+		"countryCode": "DE",
+		"deviceSerialNumber": "14011990",
+		"terminalType": "attended",
+		"capabilities": "E0F8C8",
+		"additionalCapabilities": null,
+		"version": "231"
+	},
+	"captureAdditionalData": {
+		"customerFriendlyReferenceIdentifier": null,
+		"posAuthorizationResultCode": "approved",
+		"authorizationCode": "0E88FC"
+	},
+	"instruction": {
+		"value": {
+			"amount": 4099,
+			"currency": "EUR",
+			"cashbackAmount": 0,
+			"gratuityAmount": 0,
+			"donationAmount": 0,
+			"dcc": null
+		},
+		"narrative": null,
+		"transactionType": "sale",
+		"posEntryMode": "manual_no_pin",
+		"paymentInstrument": {
+			"type": "card",
+			"primaryAccountNumber": "454305AAAAAA6721",
+			"scheme": null,
+			"expiryDate": {
+				"month": 12,
+				"year": 2020,
+				"day": 31
+			},
+			"track2Data": null,
+			"issueNo": "0",
+			"encryptedCardPaymentData": {
+				"initializationVector": "368990B68D500763",
+				"chdEncryptionType": "INGENICO_DUKPT_PIN",
+				"chdEncryptionData": "D58E09377C2AB90D3C9B63D5BF222026DA8C3761922C597224BB621227253036B1B62062146D960F9DDB35CAD3041ACC",
+				"chdksn": "FFFF4168200008201BC2",
+				"encryptedExpiryDate": null
+			},
+			"encryptedPinData": {
+                     "initializationVector": null,
+                      "pinBlock": "1F9F00FD5C40930E",
+                      "ksn": "FFFF9998200008800011"
+        },
+			"cardAdditionalData": null,
+			"transactionSequenceNumber": 5,
+			"transactionStatusInformation": null,
+			"effectiveStartDate": null
+		},
+		"reasonOnlineCode": "05"
+	},
+	"posTransactionResult": "approved_online"
+}
+
+
+
+4. REVERSAL SCENARIO (VISA MSR):
+AUTHORIZATION: (title of json payload - VISA_MSR_AUTH.json)
+{
+"transactionReference": "reversetry2",
+"transactionDateTime": 1635235640383,
+"location": null,
+"paypoint": {
+"paypointId": "33319558",
+"countryCode": "DE",
+"deviceSerialNumber": "14011990",
+"terminalType": "attended",
+"capabilities": "E0F8C8",
+"additionalCapabilities": null,
+"version": null
+},
+"instruction": {
+"transactionType": "sale",
+"value": {
+"amount": 4099,
+"currency": "EUR",
+"cashbackAmount": 0,
+"gratuityAmount": 0,
+"donationAmount": 0,
+"dcc": null
+},
+"narrative": null,
+"posEntryMode": "mag_swipe",
+"reasonOnlineCode": "10",
+"paymentInstrument": {
+"type": "card",
+"primaryAccountNumber": "454305AAAAAA6721",
+"scheme": null,
+"expiryDate": {
+"month": 12,
+"year": 2020,
+"day": 31
+},
+"track2Data": "3B343534333035AAAAAAAAAAAA363732313D32303132313237AAAAAAAAAAAAAAAAAAAAAAAAAA3F3B3FA3",
+"issueNo": "0",
+"encryptedCardPaymentData": {
+"initializationVector": "368990B68D500763",
+"chdEncryptionType": "INGENICO_DUKPT_PIN",
+"chdEncryptionData": "D58E09377C2AB90D3C9B63D5BF222026DA8C3761922C597224BB621227253036B1B62062146D960F9DDB35CAD3041ACC",
+"chdksn": "FFFF4168200008201BC2",
+"encryptedExpiryDate": null
+},
+"encryptedPinData": {
+"initializationVector": null,
+"pinBlock": "1F9F00FD5C40930E",
+"ksn": "FFFF9998200008800011"
+},
+"cardAdditionalData": null,
+"transactionSequenceNumber": 5,
+"transactionStatusInformation": null,
+"effectiveStartDate": null
+}
+},
+"additionalData": null
+}
+
+REVERSAL: (title of json payload - VISA_MSR_AUTH_REVERSAL.json
+{
+"transactionDateTime": 1635235640383,
+"instruction": {
+"paymentInstrument": {
+"type": "card",
+"primaryAccountNumber": "454305AAAAAA6721",
+"scheme": null,
+"expiryDate": {
+"month": 12,
+"year": 2020,
+"day": 31
+},
+"track2Data": "3B343534333035AAAAAAAAAAAA363732313D32303132313237AAAAAAAAAAAAAAAAAAAAAAAAAA3F3B3FA3",
+"issueNo": "0",
+"encryptedCardPaymentData": {
+"initializationVector": "368990B68D500763",
+"chdEncryptionType": "INGENICO_DUKPT_PIN",
+"chdEncryptionData": "D58E09377C2AB90D3C9B63D5BF222026DA8C3761922C597224BB621227253036B1B62062146D960F9DDB35CAD3041ACC",
+"chdksn": "FFFF4168200008201BC2",
+"encryptedExpiryDate": null
+},
+"encryptedPinData": {
+"initializationVector": null,
+"pinBlock": "1F9F00FD5C40930E",
+"ksn": "FFFF9998200008800011"
+},
+"cardAdditionalData": null,
+"transactionSequenceNumber": 5,
+"transactionStatusInformation": null
+}
+}
+}
+
+SETTLEMENT CAPTURE: (title of json - VISA_MSR_REVERSAL_CAPTURE.json)
+{
+	"transactionReference": "reversetry2",
+	"transactionDateTime": 1635490403855,
+	"location": null,
+	"payPoint": {
+		"paypointId": "33319558",
+		"countryCode": "DE",
+		"deviceSerialNumber": "14011990",
+		"terminalType": "attended",
+		"capabilities": "E0F8C8",
+		"additionalCapabilities": null,
+		"version": "231"
+	},
+	"captureAdditionalData": {
+		"customerFriendlyReferenceIdentifier": null,
+		"posAuthorizationResultCode": "declined",
+		"authorizationCode": "0E8457"
+	},
+	"instruction": {
+		"value": {
+			"amount": 4099,
+			"currency": "EUR",
+			"cashbackAmount": 0,
+			"gratuityAmount": 0,
+			"donationAmount": 0,
+			"dcc": null
+		},
+		"narrative": null,
+		"transactionType": "sale",
+		"posEntryMode": "manual_no_pin",
+		"paymentInstrument": {
+			"type": "card",
+			"primaryAccountNumber": "454305AAAAAA6721",
+			"scheme": null,
+			"expiryDate": {
+				"month": 12,
+				"year": 2020,
+				"day": 31
+			},
+			"track2Data": null,
+			"issueNo": "0",
+			"encryptedCardPaymentData": {
+				"initializationVector": "368990B68D500763",
+				"chdEncryptionType": "INGENICO_DUKPT_PIN",
+				"chdEncryptionData": "D58E09377C2AB90D3C9B63D5BF222026DA8C3761922C597224BB621227253036B1B62062146D960F9DDB35CAD3041ACC",
+				"chdksn": "FFFF4168200008201BC2",
+				"encryptedExpiryDate": null
+			},
+			"encryptedPinData": {
+                     "initializationVector": null,
+                      "pinBlock": "1F9F00FD5C40930E",
+                      "ksn": "FFFF9998200008800011"
+        },
+			"cardAdditionalData": null,
+			"transactionSequenceNumber": 5,
+			"transactionStatusInformation": null,
+			"effectiveStartDate": null
+		},
+		"reasonOnlineCode": "05"
+	},
+	"posTransactionResult": "declined_offline"
+}
+
+
+
+
+5. REVERSAL SCENARIO (MP16):
+AUTHORIZATION: (title of json payload - MASTER/MAESTRO_CTLS_AUTH.json )
+{
+"transactionReference": "MP16reversal",
+"transactionDateTime": 1635162223485,
+"location": null,
+"paypoint": {
+"paypointId": "33319558",
+"countryCode": "DE",
+"deviceSerialNumber": "14011990",
+"terminalType": "attended",
+"capabilities": "E0F8C8",
+"additionalCapabilities": null,
+"version": null
+},
+"instruction": {
+"transactionType": "sale",
+"value": {
+"amount": 4500,
+"currency": "EUR",
+"cashbackAmount": 0,
+"gratuityAmount": 0,
+"donationAmount": 0,
+"dcc": null
+},
+"narrative": null,
+"posEntryMode": "ctls_mag_swipe_no_pin",
+"reasonOnlineCode": "05",
+"paymentInstrument": {
+"type": "icc",
+"primaryAccountNumber": "679999AAAAAAAAA0166",
+"scheme": null,
+"expiryDate": {
+"month": 12,
+"year": 2025,
+"day": 31
+},
+"track2Data": "679999AAAAAAAAA0166D2512222AAAAAAAAA",
+"issueNo": "1",
+"encryptedCardPaymentData": {
+"initializationVector": "F1007F619FDA019D",
+"chdEncryptionType": "INGENICO_DUKPT_PIN",
+"chdEncryptionData": "2486E06414A15A9A8E2B4F7C5AFA7FC56AA2FC0A19A93AF7C44A2FF32BB553D3E20B2073C91C3964",
+"chdksn": "FFFF4168200008201BC0",
+"encryptedExpiryDate": null
+},
+"encryptedPinData": {
+"initializationVector": null,
+"pinBlock": "19F8B03B0C002E2E",
+"ksn": "FFFF9998200008800010"
+},
+"cardAdditionalData": null,
+"transactionSequenceNumber": 4,
+"transactionStatusInformation": "E800",
+"effectiveStartDate": null,
+"applicationCryptogram": "2C6094C742726EFB",
+"applicationInterchangeProfile": "1980",
+"applicationTransactionCounter": "026D",
+"terminalVerificationResults": "0000048001",
+"unpredictableNumber": "4C4A5B7F",
+"transactionType": "0",
+"issuerApplicationData": "0110A04009240000000000000000000000FF",
+"applicationIdentifier": "A0000000043060",
+"applicationVersionNumber": "0002",
+"cryptogramInformationData": "80",
+"cardholderVerificationMethodResults": "420300",
+"applicationUsageControl": "FF00",
+"issuerApplicationCodesDefault": "0000000000",
+"issuerApplicationCodesDenial": "0000000000",
+"issuerApplicationCodesOnline": "0000000000",
+"applicationPANSequenceNumber": "1",
+"scriptResults": null,
+"formFactorIndicator": null,
+"discretionaryData": null
+}
+},
+"additionalData": null
+}
+
+
+REVERSAL: (title of json payload - MASTER/MAESTRO_CTLS_AUTH_REVERSAL.json:
+{
+"transactionDateTime": 1635162223485,
+"instruction": {
+"paymentInstrument": {
+"type": "icc",
+"primaryAccountNumber": "679999AAAAAAAAA0166",
+"scheme": null,
+"expiryDate": {
+"month": 12,
+"year": 2025,
+"day": 31
+},
+"track2Data": "679999AAAAAAAAA0166D2512222AAAAAAAAA",
+"issueNo": "1",
+"encryptedCardPaymentData": {
+"initializationVector": "F1007F619FDA019D",
+"chdEncryptionType": "INGENICO_DUKPT_PIN",
+"chdEncryptionData": "2486E06414A15A9A8E2B4F7C5AFA7FC56AA2FC0A19A93AF7C44A2FF32BB553D3E20B2073C91C3964",
+"chdksn": "FFFF4168200008201BC0",
+"encryptedExpiryDate": null
+},
+"encryptedPinData": {
+"initializationVector": null,
+"pinBlock": "19F8B03B0C002E2E",
+"ksn": "FFFF9998200008800010"
+},
+"cardAdditionalData": null,
+"transactionSequenceNumber": 4,
+"transactionStatusInformation": "E800",
+"effectiveStartDate": null,
+"applicationCryptogram": "2C6094C742726EFB",
+"applicationInterchangeProfile": "1980",
+"applicationTransactionCounter": "026D",
+"terminalVerificationResults": "0000048001",
+"unpredictableNumber": "4C4A5B7F",
+"transactionType": "0",
+"issuerApplicationData": "0110A04009240000000000000000000000FF",
+"applicationIdentifier": "A0000000043060",
+"applicationVersionNumber": "0002",
+"cryptogramInformationData": "80",
+"cardholderVerificationMethodResults": "420300",
+"applicationUsageControl": "FF00",
+"issuerApplicationCodesDefault": "0000000000",
+"issuerApplicationCodesDenial": "0000000000",
+"issuerApplicationCodesOnline": "0000000000",
+"applicationPANSequenceNumber": "1",
+"scriptResults": null,
+"formFactorIndicator": null,
+"discretionaryData": null
+}
+},
+"additionalData": null
+}
+
+
+SETTLEMENT CAPTURE: (title of json - MASTER/MAESTRO_CTLS_REVERSAL_CAPTURE.json):
+{
+	"transactionReference": "MP16reversal",
+	"transactionDateTime": 1635489350430,
+	"location": null,
+	"payPoint": {
+		"paypointId": "33319558",
+		"countryCode": "DE",
+		"deviceSerialNumber": "14011990",
+		"terminalType": "attended",
+		"capabilities": "E0F8C8",
+		"additionalCapabilities": null,
+		"version": "231"
+	},
+	"captureAdditionalData": {
+		"customerFriendlyReferenceIdentifier": null,
+		"posAuthorizationResultCode": "declined",
+		"authorizationCode": "029376"
+	},
+	"instruction": {
+		"value": {
+			"amount": 4500,
+			"currency": "EUR",
+			"cashbackAmount": 0,
+			"gratuityAmount": 0,
+			"donationAmount": 0,
+			"dcc": null
+		},
+		"narrative": null,
+		"transactionType": "sale",
+		"posEntryMode": "ctls_mag_no_pin",
+		"paymentInstrument": {
+			"type": "icc",
+			"primaryAccountNumber": "679999AAAAAAAAA0166",
+			"scheme": null,
+			"expiryDate": {
+				"month": 12,
+				"year": 2025,
+				"day": 31
+			},
+			"track2Data": null,
+			"issueNo": "1",
+			"encryptedCardPaymentData": {
+				"initializationVector": "F1007F619FDA019D",
+				"chdEncryptionType": "INGENICO_DUKPT_PIN",
+				"chdEncryptionData": "2486E06414A15A9A8E2B4F7C5AFA7FC56AA2FC0A19A93AF7C44A2FF32BB553D3E20B2073C91C3964",
+				"chdksn": "FFFF4168200008201BC0",
+				"encryptedExpiryDate": null
+			},
+			"encryptedPinData": {
+			 "initializationVector": null,
+             "pinBlock": "19F8B03B0C002E2E",
+             "ksn": "FFFF9998200008800010"	
+			},
+			"cardAdditionalData": null,
+			"transactionSequenceNumber": 4,
+			"transactionStatusInformation": "E800",
+			"effectiveStartDate": {
+				"month": 1,
+				"year": 2004,
+				"day": 1
+			},
+			"applicationCryptogram": "2C6094C742726EFB",
+			"applicationInterchangeProfile": "1980",
+			"applicationTransactionCounter": "026D",
+			"terminalVerificationResults": "0000048001",
+			"unpredictableNumber": "4C4A5B7F",
+			"transactionType": "0",
+			"issuerApplicationData": "0110A04009240000000000000000000000FF",
+			"applicationIdentifier": "A0000000043060",
+			"applicationVersionNumber": "0002",
+			"cryptogramInformationData": "80",
+			"cardholderVerificationMethodResults": "420300",
+			"applicationUsageControl": "FF00",
+			"issuerApplicationCodesDefault": "0000000000",
+			"issuerApplicationCodesDenial": "0000000000",
+			"issuerApplicationCodesOnline": "0000000000",
+			"applicationPANSequenceNumber": "1",
+			"scriptResults": null,
+			"formFactorIndicator": null,
+			"discretionaryData": null
+		},
+		"reasonOnlineCode": "10"
+	},
+	"posTransactionResult": "declined_offline"
+}
+
+
+
+
+
+
+
+6. REVERSAL SCENARIO (MTIP-13):
+AUTHORIZATION: (title of json payload - MASTER/MAESTRO_ICC_AUTH.json):
+{
+"transactionReference": "MTIP13REVERSAL",
+"transactionDateTime": 1635235640356,
+"location": null,
+"paypoint": {
+"paypointId": "33319558",
+"countryCode": "DE",
+"deviceSerialNumber": "14011990",
+"terminalType": "attended",
+"capabilities": "E0F8C8",
+"additionalCapabilities": null,
+"version": null
+},
+"instruction": {
+"transactionType": "sale",
+"value": {
+"amount": 1000,
+"currency": "EUR",
+"cashbackAmount": 0,
+"gratuityAmount": 0,
+"donationAmount": 0,
+"dcc": null
+},
+"narrative": null,
+"posEntryMode": "chip",
+"reasonOnlineCode": "10",
+"paymentInstrument": {
+"type": "icc",
+"primaryAccountNumber": "679999AAAAAAAAA0069",
+"scheme": null,
+"expiryDate": {
+"month": 12,
+"year": 2025,
+"day": 31
+},
+"track2Data": "679999AAAAAAAAA0069D2512220AAAAAAAAA",
+"issueNo": "25",
+"encryptedCardPaymentData": {
+"initializationVector": "2CEBA22718591BFF",
+"chdEncryptionType": "INGENICO_DUKPT_PIN",
+"chdEncryptionData": "F799DCC9C8FAB34566BFCB3F3F9ABEC14A152D9D8262AC08841FD5C57992E2A94C0291AA75810603E3D3787A56BA8A53",
+"chdksn": "FFFF4168200008201C31",
+"encryptedExpiryDate": null
+},
+"encryptedPinData": {
+"initializationVector": null,
+"pinBlock": "407911395DE9A4E9",
+"ksn": "FFFF9998200008800017"
+},
+"cardAdditionalData": null,
+"transactionSequenceNumber": 8,
+"transactionStatusInformation": "E800",
+"effectiveStartDate": null,
+"applicationCryptogram": "A4DFC7533FD9F394",
+"applicationInterchangeProfile": "3000",
+"applicationTransactionCounter": "01E2",
+"terminalVerificationResults": "0000048000",
+"unpredictableNumber": "349144DE",
+"transactionType": "0",
+"issuerApplicationData": "0210A0800F240000000000000000000000FF",
+"applicationIdentifier": "A0000000043060",
+"applicationVersionNumber": "0002",
+"cryptogramInformationData": "80",
+"cardholderVerificationMethodResults": "420300",
+"applicationUsageControl": "FF00",
+"issuerApplicationCodesDefault": "FC50A00000",
+"issuerApplicationCodesDenial": "0000000000",
+"issuerApplicationCodesOnline": "F870A49800",
+"applicationPANSequenceNumber": "25",
+"scriptResults": null,
+"formFactorIndicator": null,
+"discretionaryData": null
+}
+},
+"additionalData": null
+}
+
+REVERSAL: (title of json payload - MASTER/MAESTRO_ICC_AUTH_REVERSAL.json):
+{
+"transactionDateTime": 1635235640356,
+"instruction": {
+"paymentInstrument": {
+"type": "icc",
+"primaryAccountNumber": "679999AAAAAAAAA0069",
+"scheme": null,
+"expiryDate": {
+"month": 12,
+"year": 2025,
+"day": 31
+},
+"track2Data": "679999AAAAAAAAA0069D2512220AAAAAAAAA",
+"issueNo": "25",
+"encryptedCardPaymentData": {
+"initializationVector": "2CEBA22718591BFF",
+"chdEncryptionType": "INGENICO_DUKPT_PIN",
+"chdEncryptionData": "F799DCC9C8FAB34566BFCB3F3F9ABEC14A152D9D8262AC08841FD5C57992E2A94C0291AA75810603E3D3787A56BA8A53",
+"chdksn": "FFFF4168200008201C31",
+"encryptedExpiryDate": null
+},
+"encryptedPinData": {
+"initializationVector": null,
+"pinBlock": "407911395DE9A4E9",
+"ksn": "FFFF9998200008800017"
+},
+"cardAdditionalData": null,
+"transactionSequenceNumber": 8,
+"transactionStatusInformation": "E800",
+"effectiveStartDate": null,
+"applicationCryptogram": "A4DFC7533FD9F394",
+"applicationInterchangeProfile": "3000",
+"applicationTransactionCounter": "01E2",
+"terminalVerificationResults": "0000048000",
+"unpredictableNumber": "349144DE",
+"transactionType": "0",
+"issuerApplicationData": "0210A0800F240000000000000000000000FF",
+"applicationIdentifier": "A0000000043060",
+"applicationVersionNumber": "0002",
+"cryptogramInformationData": "80",
+"cardholderVerificationMethodResults": "420300",
+"applicationUsageControl": "FF00",
+"issuerApplicationCodesDefault": "FC50A00000",
+"issuerApplicationCodesDenial": "0000000000",
+"issuerApplicationCodesOnline": "F870A49800",
+"applicationPANSequenceNumber": "25",
+"scriptResults": null,
+"formFactorIndicator": null,
+"discretionaryData": null
+}
+},
+"additionalData": null
+}
+
+SETTLEMENT CAPTURE: (title of json - MASTER/MAESTRO_ICC_REVERSAL_CAPTURE.json):
+{
+	"transactionReference": "MonlinepinICC",
+	"transactionDateTime": 1635490139358,
+	"location": null,
+	"payPoint": {
+		"paypointId": "33319558",
+		"countryCode": "DE",
+		"deviceSerialNumber": "14011990",
+		"terminalType": "attended",
+		"capabilities": "E0F8C8",
+		"additionalCapabilities": null,
+		"version": "230"
+	},
+	"captureAdditionalData": {
+		"customerFriendlyReferenceIdentifier": null,
+		"posAuthorizationResultCode": "declined",
+		"authorizationCode": "028588"
+	},
+	"instruction": {
+		"value": {
+			"amount": 1000,
+			"currency": "EUR",
+			"cashbackAmount": 0,
+			"gratuityAmount": 0,
+			"donationAmount": 0,
+			"dcc": null
+		},
+		"narrative": null,
+		"transactionType": "sale",
+		"posEntryMode": "chip_no_pin",
+		"paymentInstrument": {
+			"type": "icc",
+			"primaryAccountNumber": "679999AAAAAAAAA0069",
+			"scheme": null,
+			"expiryDate": {
+				"month": 12,
+				"year": 2025,
+				"day": 31
+			},
+			"track2Data": null,
+			"issueNo": "0",
+			"encryptedCardPaymentData": {
+				"initializationVector": "2CEBA22718591BFF",
+				"chdEncryptionType": "INGENICO_DUKPT_PIN",
+				"chdEncryptionData": "F799DCC9C8FAB34566BFCB3F3F9ABEC14A152D9D8262AC08841FD5C57992E2A94C0291AA75810603E3D3787A56BA8A53",
+				"chdksn": "FFFF4168200008201C31",
+				"encryptedExpiryDate": null
+			},
+			"encryptedPinData": {
+                 "initializationVector": null,
+                 "pinBlock": "407911395DE9A4E9",
+                 "ksn": "FFFF9998200008800017"
+            },
+			"cardAdditionalData": null,
+			"transactionSequenceNumber": 8,
+			"transactionStatusInformation": "E800",
+			"effectiveStartDate": {
+				"month": 1,
+				"year": 2004,
+				"day": 1
+			},
+			"applicationCryptogram": "5118F65EABEC82C6",
+			"applicationInterchangeProfile": "3000",
+			"applicationTransactionCounter": "01E2",
+			"terminalVerificationResults": "0000048000",
+			"unpredictableNumber": "349144DE",
+			"transactionType": "0",
+			"issuerApplicationData": "021060900F240000000000000000000000FF",
+			"applicationIdentifier": "A0000000043060",
+			"applicationVersionNumber": "0002",
+			"cryptogramInformationData": "40",
+			"cardholderVerificationMethodResults": "420300",
+			"applicationUsageControl": "FF00",
+			"issuerApplicationCodesDefault": "FC50A00000",
+			"issuerApplicationCodesDenial": "0000000000",
+			"issuerApplicationCodesOnline": "F870A49800",
+			"applicationPANSequenceNumber": "25",
+			"scriptResults": null,
+			"formFactorIndicator": null,
+			"discretionaryData": null
+		},
+		"reasonOnlineCode": "10"
+	},
+	"posTransactionResult": "declined_offline"
+}
